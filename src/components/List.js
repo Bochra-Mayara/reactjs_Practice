@@ -40,6 +40,13 @@ function List() {
      ///// modifier le state avec setter
      setFruit(fruitCopy)
    }
+
+
+
+
+   const displayFavoriteFruit = (fruitName) => {
+    alert(`I really like this fruit : ${fruitName}`)
+   }
  
 
 
@@ -52,7 +59,7 @@ function List() {
         <ul>
             {Fruit.map((fruit) => (
                
-                <Fruit_ fruitInfo={fruit} onFruitDelete={handleDelete}  key={fruit.id}/>
+                <Fruit_ fruitInfo={fruit} actionClick={() =>  displayFavoriteFruit(fruit.name)}  key={fruit.id}/>
            ))}
         </ul>
         <FruitForm handleAdd={handleAdd}/>
